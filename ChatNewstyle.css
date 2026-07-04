@@ -1,0 +1,113 @@
+/* Body background: professional gradient */
+body {
+   /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI";
+  color: #f0f0f0;  */
+
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* deep blue gradient */
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #f0f0f0;
+}
+
+/* Headings */
+h2 {
+  color: #00c6ff; /* bright accent blue */
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Chat container with glass effect */
+#chat {
+   display: flex;
+  flex-direction: column;
+  gap: 0px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12); /* translucent white */
+  backdrop-filter: blur(10px);            /* frosted glass effect */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  color: #f0f0f0; /* light text */
+  background-clip: text;
+}
+
+/* Own messages (right side, green bubble) */
+.message-own {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #a8e6cf, #dcf8c6);
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 18px 4px 18px 18px;
+  max-width: 70%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Other messages (left side, gray bubble) */
+.message-other {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #f1f1f1, #e0e0e0);
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 4px 18px 18px 18px;
+  max-width: 70%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Hover effect for interactivity */
+.message-own:hover,
+.message-other:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Sidebar styling */
+.bg-dark {
+  background-color: #1f3b4d; /* professional dark teal */
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+aside {
+  width: 250px;
+  background-color: #1f3b4d;
+  color: #fff;
+  padding: 16px;
+}
+
+/* Responsive: hide sidebar on mobile */
+@media (max-width: 768px) {
+  aside {
+    display: none !important;
+  }
+  main {
+    flex: 1;
+    width: 100%;
+  }
+    nav.navbar {
+    display: block;
+  }
+}
+
+@media (max-width: 460px) {
+  aside {
+    display: none !important;
+  }
+  main {
+    flex: 1;
+    width: 95%;
+  }
+    nav.navbar {
+    display: block;
+  }
+}
