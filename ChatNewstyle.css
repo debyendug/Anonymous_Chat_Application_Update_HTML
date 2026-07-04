@@ -34,6 +34,12 @@ h2 {
   color: #f0f0f0; /* light text */
   background-clip: text;
 }
+#message {
+  resize: none;          
+  height: 60px;         
+  max-height: 80px;    
+  overflow-y: auto;    
+}
 
 /* Own messages (right side, green bubble) */
 .message-own {
@@ -79,12 +85,46 @@ h2 {
 }
 
 aside {
-  width: 250px;
-  background-color: #1f3b4d;
+   width: 180px;            
+  background-color: #1f3b4d; 
   color: #fff;
-  padding: 16px;
+  padding: 10px;             
+  border-radius: 8px;
+  font-size: 18px;         
+  line-height: 0.4;
 }
+aside input,
+aside button,
+aside label {
+  width: 100%;
+  margin-bottom: 8px;        /* tighter spacing */
+  font-size: 13px;
+  padding: 6px 8px;          /* smaller controls */
+}
+/* Profile image area */
+aside img,
+aside .profile-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;  /* centered and compact */
+  display: block;
+}
+/* Sidebar heading */
+aside h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+  .col-12 
+  {  flex: 0 0 auto;
+    width: 20%;
+  }
+  .chatArea{
 
+    flex: 0 0 auto;
+    width: 90%;
+  }
 /* Responsive: hide sidebar on mobile */
 @media (max-width: 768px) {
   aside {
@@ -96,6 +136,16 @@ aside {
   }
     nav.navbar {
     display: block;
+  }
+   .col-12 
+  {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+  .chatArea{
+
+    flex: 0 0 auto;
+    width: 150%;
   }
 }
 
@@ -109,5 +159,16 @@ aside {
   }
     nav.navbar {
     display: block;
+  }
+  .col-12 
+  {
+
+    flex: 0 0 auto;
+    width: 36%;
+  }
+  .chatArea{
+
+    flex: 0 0 auto;
+    width: 108%;
   }
 }
