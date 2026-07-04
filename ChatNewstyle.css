@@ -128,7 +128,7 @@ aside h3 {
 /* Responsive: hide sidebar on mobile */
 @media (max-width: 768px) {
   aside {
-    display: none !important;
+    display: none;
   }
   main {
     flex: 1;
@@ -151,7 +151,7 @@ aside h3 {
 
 @media (max-width: 460px) {
   aside {
-    display: none !important;
+    display: none ;
   }
   main {
     flex: 1;
@@ -164,7 +164,7 @@ aside h3 {
   {
 
     flex: 0 0 auto;
-    width: 36%;
+    width: 33%;
   }
   .chatArea{
 
