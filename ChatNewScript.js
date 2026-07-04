@@ -16,7 +16,7 @@ function setDefaultBackground() {
   document.body.style.backgroundSize = "cover";
 }
 
-  const ws = new WebSocket("ws://localhost:8080");
+     const ws = new WebSocket("wss://secret-chat-application-we1g.onrender.com");
 // const ws = new WebSocket("wss://your-server-url");
 
 const chat = document.getElementById("chat");
