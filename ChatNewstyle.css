@@ -14,17 +14,22 @@ body {
 }
 
 /* Headings */
-h2 {
+h2, h3{
   color: #00c6ff; /* bright accent blue */
   font-weight: 600;
   text-align: center;
 }
 
+h4{
+  color: #ebb112; /* bright accent blue */
+  font-weight: 600;
+  text-align: center;
+}
 /* Chat container with glass effect */
 #chat {
    display: flex;
   flex-direction: column;
-  gap: 0px;
+  gap: 1px;
   padding: 16px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.12); /* translucent white */
@@ -81,7 +86,7 @@ h2 {
   background-color: #1f3b4d; /* professional dark teal */
   color: #fff;
   border-radius: 8px;
-  padding: 12px;
+  padding: 4px;
 }
 
 aside {
@@ -125,10 +130,38 @@ aside h3 {
     flex: 0 0 auto;
     width: 90%;
   }
+  #user-info {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+      padding: 1px 100px;
+    font-size: 20px;
+}
+.navbar-toggler{
+
+  padding: 10px;
+}
+#menuNavbar{
+  width: 20px;
+      padding: 0px 150px;
+}
+.upload-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
 /* Responsive: hide sidebar on mobile */
 @media (max-width: 768px) {
   aside {
-    display: none;
+    display: none !important;
   }
   main {
     flex: 1;
@@ -147,11 +180,18 @@ aside h3 {
     flex: 0 0 auto;
     width: 150%;
   }
+  #user-info {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+      padding: 1px 1px;
+    font-size: 20px;
+}
 }
 
 @media (max-width: 460px) {
   aside {
-    display: none ;
+    display: none !important;
   }
   main {
     flex: 1;
@@ -164,11 +204,18 @@ aside h3 {
   {
 
     flex: 0 0 auto;
-    width: 33%;
+    width: 34%;
   }
   .chatArea{
 
     flex: 0 0 auto;
-    width: 108%;
+    width: 100%;
   }
+  #user-info {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: center;
+      padding: 1px 1px;
+    font-size: 17px;
+}
 }
