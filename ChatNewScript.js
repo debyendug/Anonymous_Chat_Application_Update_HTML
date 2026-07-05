@@ -9,14 +9,16 @@ while (!username || username.trim() === "") {
     alert("You must enter a name to join the chat.");
   }
 }
-
+  
 function setDefaultBackground() {
     document.body.style.background = "linear-gradient(135deg, #667eea 0%, #764ba2 100%)";
   document.body.style.backgroundAttachment = "fixed";
   document.body.style.backgroundSize = "cover";
 }
 
-     const ws = new WebSocket("wss://secret-chat-application-we1g.onrender.com");
+  //const ws = new WebSocket("ws://localhost:8080");
+// const ws = new WebSocket("wss://your-server-url");
+const ws = new WebSocket("wss://secret-chat-application-we1g.onrender.com");
 // const ws = new WebSocket("wss://your-server-url");
 
 const chat = document.getElementById("chat");
@@ -51,7 +53,8 @@ ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
 
 if (data.type === "approved") {
-        chat.innerHTML += `<p><em>${username} joined the chat</em></p>`;
+   chat.innerHTML += `<p><em>${username} joined the chat</em></p>`;
+
       }
   else if( data.type === "rejected") 
     {
@@ -142,7 +145,7 @@ profileUpload.addEventListener("change", (event) => {
 });
 
 removeProfileBtn.addEventListener("click", () => {
-  profileImg.src = "default-avatar.png";
+  profileImg.src = "/Image/Avtar_imag.jpg";
   removeProfileBtn.classList.add("d-none");
   profileUpload.value = "";
 });
@@ -150,7 +153,7 @@ removeProfileBtn.addEventListener("click", () => {
 // Background upload/remove
 const bgUpload = document.getElementById("bg-upload");
 const removeBgBtn = document.getElementById("remove-bg");
-console.log("going to insert Image");
+//console.log("going to insert Image");
 
 bgUpload.addEventListener("change", (event) => {
   const file = event.target.files[0];
