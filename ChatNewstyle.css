@@ -11,6 +11,8 @@ body {
   background-size: cover;
   font-family: "Segoe UI", Arial, sans-serif;
   color: #f0f0f0;
+  height: 100%;
+    margin: 0;
 }
 
 /* Headings */
@@ -38,7 +40,7 @@ h4{
   overflow-y: auto;
   color: #f0f0f0; /* light text */
   background-clip: text;
-   margin-top: 112%; 
+   margin-top: 12%; 
 }
 
 #message {
