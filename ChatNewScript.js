@@ -15,8 +15,20 @@ function setDefaultBackground() {
   document.body.style.backgroundAttachment = "fixed";
   document.body.style.backgroundSize = "cover";
 }
+function getTrimmedCustName(name) {
+  const userName = name
+    .trim()
+    .split(/\s+/)              // split by one or more spaces
+    .map(word => word[0])      // take first letter of each word
+    .join('');                 // join them together
 
-  //const ws = new WebSocket("ws://localhost:8080");
+  return userName.toUpperCase()
+}
+function generateId() {
+  return ''+ Math.random().toString(36).substr(2, 9);
+}
+
+  //const ws = new WebSocket("ws://localhost:8888");
 // const ws = new WebSocket("wss://your-server-url");
 const ws = new WebSocket("wss://secret-chat-application-we1g.onrender.com");
 // const ws = new WebSocket("wss://your-server-url");
@@ -26,13 +38,19 @@ const messageInput = document.getElementById("message");
 const sendButton = document.getElementById("send");
 const editNameInput = document.getElementById("edit-name");
 const changeNameBtn = document.getElementById("change-name");
-document.getElementById("user-info").innerText = `User Name: ${username}`;
+ 
+ const UnqID = generateId().toUpperCase();
+ const fnalUserName = getTrimmedCustName(username) + "_" + UnqID;  
+ //const uniqueID = generateId();
+
+document.getElementById("user-info").innerText = `User Name: ${fnalUserName}`;
 
  changeNameBtn.addEventListener("click", () => {
     const newName = editNameInput.value.trim();
     if (newName) {
-      username = newName; // update global username
-      document.getElementById("user-info").innerText  = `User Name: ${username}`;
+      username = newName; 
+      const editNameValue = getTrimmedCustName(newName)  + "_" + UnqID;// update global username
+      document.getElementById("user-info").innerText  = `User Name: ${editNameValue}`;
 
       // Show in chat area
       chat.innerHTML += `<p><em>You changed your name to ${username}</em></p>`;
